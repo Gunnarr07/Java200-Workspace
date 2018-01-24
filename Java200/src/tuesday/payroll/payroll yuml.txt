@@ -1,0 +1,4 @@
+[Comptroller|printCheckforEmployee(e)]-[Employee]
+[Comptroller]-[Check],
+[Check| printForEmployee(emp)]-[PrintLayout|createCheckout()],
+[PayRate | findHourlyWageForPatyGrade(grade)] - [Check]
