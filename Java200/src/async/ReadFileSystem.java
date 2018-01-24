@@ -11,8 +11,8 @@ public class ReadFileSystem {
 		this.sDir = sDir;
 	}
 	
-	public Callable process() {
-		return new Callable() {
+	public Callable<String> process() {
+		return new Callable<String>() {
 			public String call() throws Exception {
 				Files.find(Paths.get(sDir), 999, (p, bfa) -> bfa.isRegularFile()).forEach(System.out::println);
 				return "Done reading file.";
