@@ -8,6 +8,7 @@ package wednesday;
  */
 public class Dog {
 	private String name;
+	private TrickTraining trickTraining; // Composition
 	
 	public void bark() {
 		System.out.println("Bark");
