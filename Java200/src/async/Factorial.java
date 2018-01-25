@@ -9,7 +9,7 @@ public class Factorial {
 		stop = v;
 	}
 	
-	public Callable<Integer> process() {
+	public Callable<Integer> processAsync() {
 		return new Callable<Integer>() {
 			public Integer call() throws Exception {
 				int fact = 1;
@@ -19,5 +19,13 @@ public class Factorial {
 				return fact;
 			}
 		};
+	}
+	
+	public Integer processSync() {
+		int fact = 1;
+		for(int i = 2; i <= stop; i++) {
+			fact *= i;
+		}
+		return fact;
 	}
 }

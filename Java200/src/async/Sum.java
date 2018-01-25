@@ -9,15 +9,28 @@ public class Sum {
 		stop = v;
 	}
 	
-	public Callable<Integer> process() {
-		return new Callable<Integer>() {
-			public Integer call() throws Exception {
-				int sum = 0;
-				for(int i = 1; i <= stop; i++) {
-					sum += i;
-				}
-				return sum;
-			}
+	public Callable<Integer> processAsync() {
+//		return new Callable<Integer>() {
+//			public Integer call() throws Exception {
+//				int sum = 0;
+//				for(int i = 1; i <= stop; i++) {
+//					sum += i;
+//				}
+//				return sum;
+//			}
+//		};
+		
+		Callable<Integer> callableObj = () -> {
+			return processSync();
 		};
+		return callableObj;
+	}
+	
+	public Integer processSync() {
+		int sum = 0;
+		for(int i = 1; i <= stop; i++) {
+			sum += i;
+		}
+		return sum;
 	}
 }

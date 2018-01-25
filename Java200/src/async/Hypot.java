@@ -11,11 +11,15 @@ public class Hypot {
 		this.side2 = side2;
 	}
 	
-	public Callable<Double> process() {
+	public Callable<Double> processAsync() {
 		return new Callable<Double>() {
 			public Double call() throws Exception {
 				return Math.sqrt((side1 * side1) + (side2 * side2));
 			}
 		};
+	}
+	
+	public Double processSync() {
+		return Math.sqrt((side1 * side1) + (side2 * side2));
 	}
 }
